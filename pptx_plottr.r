@@ -1,16 +1,15 @@
 #'
-#' ppt_ready_plots.r
+#' pptx_plottr.r
 #' This script is a template that allows you to easily create separate-and-editable plots in R.
 #' Code adapted from https://www.pipinghotdata.com/posts/2020-09-22-exporting-editable-ggplot-graphics-to-powerpoint-with-officer-and-purrr/#'how
 #'
 #' Author....Ryan Poulsen
 #' Created...07/06/2026
-#' Updated...07/15/2026
+#' Updated...07/16/2026
 #'
 #' Updates:
-#' - Bug fix, actually added support for gridExtra plots without removing ggplot support
-#' - Added output message
-#' - Removed default pptx_path
+#' - Rename ppt_ready_plots.r to pptx_plottr.r
+#' - Rename ppt_ready_plot() to pptx_plot()
 #'
 #' Made with <3
 #'
@@ -29,7 +28,7 @@ library(glue)
 #' @param plt A ggplot or gridExtra plot object.
 #' @param pptx_path Path to powerpoint presentation to export.
 #'
-ppt_ready_plot <- function(plt, pptx_path) {
+pptx_plot <- function(plt, pptx_path) {
   if (is_ggplot(plt)) { # if plt is a ggplot object
     plt_dml <- rvg::dml(plot(plt))
   } else { # if plt is not a ggplot object, perhaps gridExtra
