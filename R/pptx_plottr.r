@@ -31,8 +31,8 @@ pptx_plot <- function(plt, pptx_path) {
   officer::read_pptx() %>%
     # add slide
     officer::add_slide(layout = "Blank") %>%
-    # specify object (plot) and location (on slide) of plot
-    officer::ph_with(plt_dml, officer::ph_location()) %>%
+    # add plot to slide at full-size
+    officer::ph_with(plt_dml, officer::ph_location_fullsize()) %>%
     # export slide; if .pptx already exists, update file, otherwise create new .pptx
     print(target = here::here(pptx_path)
     )
