@@ -3,10 +3,6 @@
 #' This script allows you to easily create separate-and-editable plots in R.
 #' An officer-based package.
 #'
-#' Author....Ryan Poulsen
-#' Created...07/06/2026
-#' Updated...07/21/2026
-#'
 #' Made with <3
 #'
 
