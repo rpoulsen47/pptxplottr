@@ -1,4 +1,4 @@
-# pptxplottr R package
+# pptxplottr
 An ```rvg```-based package to easily send ggplots to Microsoft Powerpoint in R as Separate-and-Editable figures.
 
 ## Installation
