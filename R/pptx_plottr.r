@@ -8,7 +8,7 @@
 #' Updated...07/21/2026
 #'
 #' Updates:
-#' - pptx_plot can now create new .pptx files if the specified pptx_path does not exist.
+#' - removed unnecessary packages (tidyverse, dplyr)
 #'
 #' Made with <3
 #'
@@ -16,20 +16,18 @@
 # Import Libraries
 library(ggplot2)
 library(officer)
-library(dplyr)
-library(tidyverse)
 library(rvg)
 library(here)
-library(glue)
 
 #'
-#' @description *Powerpoint Ready Plots for Separate-and-Editable Figures Made Easy*
+#' Powerpoint Ready Plot
+#' @description Powerpoint Ready Plots for Separate-and-Editable Figures Made Easy
 #' @param plt A ggplot or gridExtra plot object.
 #' @param pptx_path Path to powerpoint presentation to export.
 #' @export
 #'
 pptx_plot <- function(plt, pptx_path) {
-  if (is_ggplot(plt)) { # if plt is a ggplot object
+  if (ggplot2::is_ggplot(plt)) { # if plt is a ggplot object
     plt_dml <- rvg::dml(plot(plt))
   } else { # if plt is not a ggplot object, perhaps gridExtra
     plt_dml <- rvg::dml(plot(plt))
@@ -45,6 +43,3 @@ pptx_plot <- function(plt, pptx_path) {
     )
   print(paste("Plot exported to '", pptx_path, "'", sep = ""))
 }
-
-
-devtools::document()
