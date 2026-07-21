@@ -9,9 +9,16 @@ Authors@R: c(
       role = c("aut", "cre")
     )
   )
-Description: More about what it does (maybe more than one line).
-    Continuation lines should be indented.
-License: What license is it under?
+Description: An officer based package to easily send ggplots to Microsoft Powerpoint in R as Separate-and-Editable/Publication-Ready figures.
+License: MIT
 Encoding: UTF-8
 LazyData: true
+Imports: 
+    officer,
+    ggplot2,
+    rvg,
+    here
+Suggests: 
+    testthat,
+    gridExtra
 RoxygenNote: 7.3.3
