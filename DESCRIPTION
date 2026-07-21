@@ -6,19 +6,20 @@ Authors@R: c(
     person(
       "Ryan", "Poulsen",
       email = "ryan.poulsen@richmond.edu",
-      role = c("aut", "cre")
+      role = c("aut", "cre", "cph")
     )
   )
 Description: An officer based package to easily send ggplots to Microsoft Powerpoint in R as Separate-and-Editable/Publication-Ready figures.
-License: MIT
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: 
     officer,
     ggplot2,
+    magrittr,
     rvg,
     here
 Suggests: 
     testthat,
     gridExtra
-RoxygenNote: 7.3.3
+RoxygenNote: 8.0.0
