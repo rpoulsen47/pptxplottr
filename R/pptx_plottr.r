@@ -1,6 +1,6 @@
 #'
 #' pptx_plottr.r
-#' This script is a template that allows you to easily create separate-and-editable plots in R.
+#' This script allows you to easily create separate-and-editable plots in R.
 #' An officer-based package.
 #'
 #' Author....Ryan Poulsen
@@ -16,6 +16,7 @@
 # Import Libraries
 library(ggplot2)
 library(officer)
+library(magrittr)
 library(rvg)
 library(here)
 
@@ -24,6 +25,7 @@ library(here)
 #' @description Powerpoint Ready Plots for Separate-and-Editable Figures Made Easy
 #' @param plt A ggplot or gridExtra plot object.
 #' @param pptx_path Path to powerpoint presentation to export.
+#' @importFrom magrittr %>%
 #' @export
 #'
 pptx_plot <- function(plt, pptx_path) {
@@ -36,8 +38,8 @@ pptx_plot <- function(plt, pptx_path) {
   officer::read_pptx() %>%
     # add slide
     officer::add_slide(layout = "Blank") %>%
-    # specify object (plot) and location (on slide) of object
-    officer::ph_with(plt_dml, ph_location()) %>%
+    # specify object (plot) and location (on slide) of plot
+    officer::ph_with(plt_dml, officer::ph_location()) %>%
     # export slide; if .pptx already exists, update file, otherwise create new .pptx
     print(target = here::here(pptx_path)
     )
