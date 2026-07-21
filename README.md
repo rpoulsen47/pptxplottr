@@ -1,8 +1,29 @@
-# pptxplottr
-An rvg-based package to easily send ggplots to Microsoft Powerpoint in R as Separate-and-Editable/Publication-Ready figures.
+# pptxplottr R package
+An ```rvg```-based package to easily send ggplots to Microsoft Powerpoint in R as Separate-and-Editable figures.
 
 ## Installation
+In the R terminal, run:
 ```{r eval=FALSE}
+library(devtools)
 install_github("rpoulsen47/pptxplottr")
+```
+## Example
+```{r eval=FALSE}
 library(pptxplottr)
+library(ggplot2)
+
+# Example data
+df <- data.frame(
+  value = c("A", "B", "C"),
+  count = c(54779, 271052, 93000),
+  stringsAsFactors = TRUE
+)
+
+# Example ggplot
+plt <- ggplot(df, aes(x = factor(value), y = count)) +
+  geom_col() +
+  labs(title = "pptxplottr Test Figure") +
+  geom_text(aes(label = count))
+  
+pptx_plot(plt, "filepath/plot_export.pptx")
 ```
