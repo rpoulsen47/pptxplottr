@@ -16,7 +16,6 @@ LazyData: true
 Imports: 
     officer,
     ggplot2,
-    magrittr,
     rvg,
     here
 Suggests: 
